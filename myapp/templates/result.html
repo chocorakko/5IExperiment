@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% set limit = time * season * 16 * 3 / 10 %}
+
+{% block body %}
+<div class="register">
+    <h1>登録内容</h1>
+    <ul>
+         <li>授業名:{{name}}</li>
+        <li>週当たりの時間:{{time}}</li>
+        <li>期間:{{session['season']}}</li>
+        <li>現時点での欠課時数:{{now}}</li>
+    </ul>
+    
+</div>
+<div class="result">
+    <h1>結果</h1>
+    <ul>
+        <h2>最大欠課時数：{{limit}}</h2>
+        {% if limit <= now%}
+        <h2>[ 落単 ]</h2>
+            {%else%}
+            <h2>余りの時間：{{limit - now}}</h2>
+            {%endif%}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/reset.css" rel="stylesheet">
+    <title>5IExperiment</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div class="logo">
+        <img src="static/images/graduation.png" alt="graduation">
+        <p>卒業するために頑張って出席しましょう</p>
+        <h1>欠課時数確認</h1>
+    </div>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+    <div class="post">
+        <p> 授業情報がわからない方は <a href="https://syllabus.kosen-k.go.jp/Pages/PublicDepartments?school_id=11">ここ</a> でシラバスを確認しましょう。　</p>
+        
+    </div>
+</body>
+
+
+</html>
